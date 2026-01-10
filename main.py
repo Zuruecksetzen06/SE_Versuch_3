@@ -3,11 +3,9 @@
 #!/usr/bin/env python3
 # main
 from pygame.examples.eventlist import img_on_off
-import copy
-import time
-
 import gfx_stack as gfx
 import kommandozeilen_argumente as cmdargs
+
 import Normalisieren
 import Test_Data
 import Start_End
