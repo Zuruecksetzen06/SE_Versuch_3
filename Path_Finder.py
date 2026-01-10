@@ -1,5 +1,9 @@
+
+
 import Test_Data
 import Start_End
+import time
+import Visualizer
 
 test_map = Test_Data.Normalised
 pos, target_pos = Start_End.findStartEnd(test_map)
@@ -85,3 +89,6 @@ while pos != target_pos:
         test_map[pos[0]][pos[1]] = 'A'
     
     Test_Data.printData(test_map)
+    #time.sleep(1)
+    #Visualizer.run_labyrinth_view(test_map)
+
