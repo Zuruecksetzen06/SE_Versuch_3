@@ -79,6 +79,19 @@ def move(pos, direction, lab_map):
         lab_map[next_pos[0]][next_pos[1]] = 'A'
     return next_pos, next_direction, lab_map
 
+def findPath(map, start, end):
+    pos = start
+    target = end
+    direction = 'W'
+
+    path = []
+
+    while target != pos:
+        pos, direction, map = move(pos, direction, map)
+        path.append(map)
+    return path
+
+
 def main():
     test_map = Test_Data.Normalised
     pos, target_pos = Start_End.findStartEnd(test_map)

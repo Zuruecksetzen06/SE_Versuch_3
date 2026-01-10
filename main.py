@@ -8,6 +8,7 @@ import Normalisieren
 import Test_Data
 import Start_End
 import Visualizer
+import Path_Finder_V2
 
 
 
@@ -67,14 +68,33 @@ def paint_smiley():
 #     # aufräumen
 #     gfx.quit_prog()
 
+# main entwurf eins
+# def main():
+#
+#     data = Test_Data.Type1
+#
+#     map = Normalisieren.normalise(data)
+#
+#     pos, target = Start_End.findStartEnd(map)
+#     direction = 'W'
+#
+#     while target != pos:
+#         pos, direction, map = Path_Finder_V2.move(pos, direction, map)
+#         Test_Data.printData(map)
 
+
+# Ansatz: Weg speichern
 def main():
-    Test_Data.printData(Normalisieren.normalise(Test_Data.Type1))
-    Test_Data.printData(Normalisieren.normalise(Test_Data.Type2))
-    print(Start_End.findStartEnd(Normalisieren.normalise(Test_Data.Type2)))
-    Visualizer.run_labyrinth_view(Normalisieren.normalise(Test_Data.Type2))
+    data = Test_Data.Type1
 
+    map = Normalisieren.normalise(data)
 
+    start, end = Start_End.findStartEnd(map)
+    path=[]
+    path.append(map)
+    path.append(Path_Finder_V2.findPath(map, start, end))
+
+    print(path)
 
 if __name__ == '__main__':
     main()
