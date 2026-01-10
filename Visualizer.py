@@ -1,7 +1,7 @@
 # Teilaufgabe 3.4 Bildgebung
 
 import gfx_stack
-from Test_data import Normalised
+from Test_Data import Normalised
 
 
 COLOR_MAP = {
@@ -34,5 +34,5 @@ def main():
     gfx_stack.quit_prog()
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
