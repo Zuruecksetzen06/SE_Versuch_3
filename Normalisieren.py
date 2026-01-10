@@ -16,11 +16,19 @@ def normalise(data):    #Normalisirt die Daten auf den selbsgewählten Standart
 
     normalisedData = []
 
-    if dataType == 1:
-        for i in range(len(data)):
-            normalisedDataRow = []
-            for j in range(len(data[0])):
+    perimiter = []
 
+    for j in range(len(data[0])+2):
+        perimiter.append('W')
+    normalisedData.append(perimiter)
+
+
+    for i in range(len(data)):
+        normalisedDataRow = []
+        normalisedDataRow.append('W')
+        for j in range(len(data[0])):
+
+            if dataType == 1:
                 if data[i][j] == 'S':
                     normalisedDataRow.append('S')
                 elif data[i][j] == 'W':
@@ -32,13 +40,8 @@ def normalise(data):    #Normalisirt die Daten auf den selbsgewählten Standart
                 else:
                     normalisedDataRow.append('G')
 
-            normalisedData.append(normalisedDataRow)
 
-    elif dataType == 2:
-        for i in range(len(data)):
-            normalisedDataRow = []
-            for j in range(len(data[0])):
-
+            elif dataType == 2:
                 if data[i][j] == 'S':
                     normalisedDataRow.append('S')
                 elif data[i][j] == 'X':
@@ -50,7 +53,10 @@ def normalise(data):    #Normalisirt die Daten auf den selbsgewählten Standart
                 else:
                     normalisedDataRow.append('G')
 
-            normalisedData.append(normalisedDataRow)
+        normalisedDataRow.append('W')
+        normalisedData.append(normalisedDataRow)
+
+    normalisedData.append(perimiter)
 
     return normalisedData
 
