@@ -85,6 +85,7 @@ def findPath(map, start, end):
     direction = 'W'
 
     path = []
+    path.append(map)
 
     while target != pos:
         pos, direction, map = move(pos, direction, map)

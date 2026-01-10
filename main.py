@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # main
 from pygame.examples.eventlist import img_on_off
+import copy
+import time
 
 import gfx_stack as gfx
 import kommandozeilen_argumente as cmdargs
@@ -9,6 +11,7 @@ import Test_Data
 import Start_End
 import Visualizer
 import Path_Finder_V2
+
 
 
 
@@ -84,17 +87,20 @@ def paint_smiley():
 
 
 # Ansatz: Weg speichern
+
+
+
 def main():
     data = Test_Data.Type1
 
     map = Normalisieren.normalise(data)
 
     start, end = Start_End.findStartEnd(map)
-    path=[]
-    path.append(map)
-    path.append(Path_Finder_V2.findPath(map, start, end))
 
-    print(path)
+    path=Path_Finder_V2.findPath(map, start, end)
+
+    Visualizer.iluminate(path, 0.1)
+
 
 if __name__ == '__main__':
     main()
