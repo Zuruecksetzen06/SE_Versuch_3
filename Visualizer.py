@@ -1,4 +1,4 @@
-# Teilaufgabe 3.4 Bildgebung
+# Teilaufgabe 3.4 Bildgebung, Autor Claas Malberg
 import gfx_stack
 from Test_Data import Normalised
 import time

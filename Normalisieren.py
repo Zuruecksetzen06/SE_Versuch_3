@@ -1,3 +1,4 @@
+# Autor: Leonhard Pieper
 import Test_Data
 
 def determinType(data):             #Datenformat der eingehenden Daten bestimmen

@@ -1,3 +1,4 @@
+Autor: Paul Störr
 import Test_Data
 import Start_End
 

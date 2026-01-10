@@ -1,3 +1,5 @@
+#Autor: Leonhard Pieper
+
 #!/usr/bin/env python3
 # main
 from pygame.examples.eventlist import img_on_off
