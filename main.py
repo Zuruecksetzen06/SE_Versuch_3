@@ -91,15 +91,15 @@ def paint_smiley():
 
 
 def main():
-    data = Test_Data.Type1
+    data = Test_Data.Type1  # Daten "einlesen"
 
-    map = Normalisieren.normalise(data)
+    map = Normalisieren.normalise(data)     # Daten Normalisieren
 
-    start, end = Start_End.findStartEnd(map)
+    start, end = Start_End.findStartEnd(map)        #Start und endkoordinate finden
 
-    path=Path_Finder_V2.findPath(map, start, end)
+    path=Path_Finder_V2.findPath(map, start, end)       #Lösungsweg berechnen
 
-    Visualizer.iluminate(path, 0.1)
+    Visualizer.iluminate(path, 0.1)         #lösungsweg aufzeichnen
 
 
 if __name__ == '__main__':
