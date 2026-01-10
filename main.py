@@ -72,8 +72,7 @@ def main():
     Test_Data.printData(Normalisieren.normalise(Test_Data.Type1))
     Test_Data.printData(Normalisieren.normalise(Test_Data.Type2))
     print(Start_End.findStartEnd(Normalisieren.normalise(Test_Data.Type2)))
-    #Visualizer.draw_labyrinth(Normalisieren.normalise(Test_Data.Type2)) #funktionier noch nicht
-
+    Visualizer.run_labyrinth_view(Normalisieren.normalise(Test_Data.Type2))
 
 
 
