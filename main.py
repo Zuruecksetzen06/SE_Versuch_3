@@ -11,8 +11,9 @@ import Test_Data
 import Start_End
 import Visualizer
 import Path_Finder_V2
+import Readout_V2
 
-
+filename = "Labyrinth-3.txt"
 
 
 
@@ -91,7 +92,7 @@ def paint_smiley():
 
 
 def main():
-    data = Test_Data.Type1  # Daten "einlesen"
+    data = Readout_V2.readout_file(filename)  # Daten "einlesen"
 
     map = Normalisieren.normalise(data)     # Daten Normalisieren
 
@@ -99,7 +100,7 @@ def main():
 
     path=Path_Finder_V2.findPath(map, start, end)       #Lösungsweg berechnen
 
-    Visualizer.iluminate(path, 0.1)         #lösungsweg aufzeichnen
+    Visualizer.iluminate(path, 0.01)         #lösungsweg aufzeichnen
 
 
 if __name__ == '__main__':
