@@ -1,4 +1,4 @@
-#Autor: Leonhard Pieper
+#Autor: Leonhard Pieper (Primär), Anton Friedel, Paul Störr, Claas Malberg
 
 from pygame.examples.eventlist import img_on_off
 import gfx_stack as gfx
@@ -11,7 +11,7 @@ import Visualizer
 import Path_Finder_V2
 import Readout_V2
 
-filename = "Labyrinth-3.txt"
+filename = "Labyrinth-1.txt"
 delay = 0.1
 
 def main():

@@ -44,17 +44,16 @@ def iluminate(path, delay=0.1):  # <------- !Geschw.!          #Animieren des be
 
     step_index = 0
 
-    while not gfx_stack.stop_prog and step_index < len(path):   #Zeuchnen des aktuellen Zustands
-        #print(step_index)
-        #print(path)
-        #print(path[step_index])
+    while not gfx_stack.stop_prog:    #Zeuchnen des aktuellen Zustands
+
         draw_labyrinth(path[step_index])
 
         time.sleep(delay)                                       #Kleine Zeigverzögerung zur Sichtbarmachung des Lösungswegs
 
         gfx_stack.event_loop()                                  #Fensterupdate bei Event
 
-        step_index += 1                                         #Zähler des Lösungsschrittes wird erhöht-> nächster Lösungschritt
+        if step_index < len(path)-1:
+            step_index += 1                                         #Zähler des Lösungsschrittes wird erhöht-> nächster Lösungschritt
 
 
 
