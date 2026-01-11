@@ -18,7 +18,6 @@ def draw_labyrinth(Normalised):         #zeichnet Laby Pixel für Pixel
     for y in range(len(Normalised)):
         for x in range(len(Normalised[y])):
             feld = Normalised[y][x]
-            #print(feld)
             farbe = COLOR_MAP[feld]
             gfx_stack.set_pixel((x, y), farbe)
 
@@ -35,7 +34,7 @@ def run_labyrinth_view(Normalised):
 
     gfx_stack.quit_prog()
 
-def iluminate(path, delay=0.1):  # <------- !Geschw.!          #Animieren des berechneten Lösungswegs durch Liste von Kartenzuständen
+def iluminate(path, fast_delay, delay=0.1):  # <------- !Geschw.!          #Animieren des berechneten Lösungswegs durch Liste von Kartenzuständen
 
     # Initialisiere Grafik einmal
     gfx_stack.init_once(                                       #Initialisieren der Graphik (Einmalig, danach nur Zustandsänderung!)
@@ -48,7 +47,10 @@ def iluminate(path, delay=0.1):  # <------- !Geschw.!          #Animieren des be
 
         draw_labyrinth(path[step_index])
 
-        time.sleep(delay)                                       #Kleine Zeigverzögerung zur Sichtbarmachung des Lösungswegs
+        if gfx_stack.space_key:
+            time.sleep(fast_delay)
+        else:
+            time.sleep(delay)                                       #Kleine Zeigverzögerung zur Sichtbarmachung des Lösungswegs
 
         gfx_stack.event_loop()                                  #Fensterupdate bei Event
 

@@ -1,9 +1,8 @@
-
+# Anton Friedel
 import Test_Data
 
 def readout_file(filename):
     raw_data = []
-
 
     with open(filename, "r", encoding='utf-8') as file:
         for line_index, line in enumerate(file):
