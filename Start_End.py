@@ -1,6 +1,7 @@
 # Autor: Leonhard Pieper
 import Test_Data
 
+not_number = ['W', 'G', 'B', 'A', 'S', 'Z']
 
 def findStartEnd(data):
     start = [0, 0]
@@ -14,6 +15,19 @@ def findStartEnd(data):
                 end[0]=i
                 end[1]=j
     return start,end
+
+def save_numbers(data):
+    number_list = []
+    number_pos_list = []
+    for i in range(len(data)):
+        for j in range(len(data[0])):
+            field = data[i][j]
+            if field not in not_number:
+                number_list.append(int(field))
+                number_pos_list.append([i, j])
+    return number_list, number_pos_list
+
+
 
 
 def main():

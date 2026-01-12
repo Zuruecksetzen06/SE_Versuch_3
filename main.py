@@ -17,20 +17,23 @@ import Readout_V2
 filename = "Labyrinth-3.txt"
 delay = 0.1
 fast_delay = 0.001
-algorythm = 1
+algorythm = 2
 
 def main():
     data = Readout_V2.readout_file(filename)  # Daten "einlesen"
 
-    map = Normalisieren.normalise(data)     # Daten Normalisieren
+    map = Normalisieren.normalise(data)
+
+    #print(Start_End.save_numbers(map))# Daten Normalisieren
 
     start, end = Start_End.findStartEnd(map)        #Start und endkoordinate finden
     if algorythm == 1:
-        path = Path_Finder_V2.findPath(map, start, end)
+        path, value = Path_Finder_V2.findPath(map, start, end)
+        print("Summe= ", value)
     if algorythm == 2:
         path = Path_Finder_V3.save_best_path(map, start, end)
 
-    Visualizer.iluminate(path, fast_delay, delay)         #lösungsweg aufzeichnen
+    Visualizer.iluminate(path, fast_delay, delay)  #lösungsweg aufzeichnen
 
 
 if __name__ == '__main__':

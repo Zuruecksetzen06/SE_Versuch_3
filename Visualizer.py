@@ -10,14 +10,18 @@ COLOR_MAP = {
     'B': "Topaz",                       # bereits besucht
     'A': "Golden Fizz",                 # Avatar (Idee für später: Blinken Grau/Gold)
     'S': "Atlantis",                    # Start
-    'Z': "Mandy"                        # Ziel (Idee für später: Blinken Rot/hellrot)
+    'Z': "Mandy",                        # Ziel (Idee für später: Blinken Rot/hellrot)
+    'I': "Royal Blue"
 }
 
+not_number = ['W', 'G', 'B', 'A', 'S', 'Z']
 
 def draw_labyrinth(Normalised):         #zeichnet Laby Pixel für Pixel
     for y in range(len(Normalised)):
         for x in range(len(Normalised[y])):
             feld = Normalised[y][x]
+            if feld not in not_number:
+                feld = 'I'
             farbe = COLOR_MAP[feld]
             gfx_stack.set_pixel((x, y), farbe)
 

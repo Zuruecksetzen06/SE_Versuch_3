@@ -39,7 +39,8 @@ def normalise(data):    #Normalisirt die Daten auf den selbsgewählten Standart
                 elif data[i][j] == 'Z':
                     normalisedDataRow.append('Z')
                 else:
-                    normalisedDataRow.append('G')
+                    normalisedDataRow.append(data[i][j])
+
 
 
             elif dataType == 2:
@@ -52,7 +53,7 @@ def normalise(data):    #Normalisirt die Daten auf den selbsgewählten Standart
                 elif data[i][j] == 'Z':
                     normalisedDataRow.append('Z')
                 else:
-                    normalisedDataRow.append('G')
+                    normalisedDataRow.append(data[i][j])
 
         normalisedDataRow.append('W')
         normalisedData.append(normalisedDataRow)

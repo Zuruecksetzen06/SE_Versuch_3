@@ -71,27 +71,39 @@ def get_next_move(pos, direction, lab_map, go_back_mode = False, rotation_index 
         else:
             return get_next_move(pos, direction, lab_map, False, rotation_index+1)
         
-def move(pos, direction, lab_map):
+def move(pos, direction, lab_map, num_list, pos_list, value):
+
+    if pos in pos_list:
+        for index, num_pos in enumerate(pos_list):
+            if num_pos == pos:
+                value += num_list[index]
+                print("Zahl übergangen: ", num_list[index])
+
+
+
 
     next_pos, next_direction = get_next_move(pos, direction, lab_map)
     lab_map = [['B' if element == 'A' else element for element in reihe] for reihe in lab_map]
 
     if lab_map[next_pos[0]][next_pos[1]] != 'S':
         lab_map[next_pos[0]][next_pos[1]] = 'A'
-    return next_pos, next_direction, lab_map
+    return next_pos, next_direction, lab_map, value
 
 def findPath(map, start, end):
     pos = start
     target = end
     direction = 'W'
+    num_list, pos_list = Start_End.save_numbers(map)
+
+    value = 0
 
     path = []
     path.append(map)
 
     while target != pos:
-        pos, direction, map = move(pos, direction, map)
+        pos, direction, map, value = move(pos, direction, map, num_list, pos_list,value)
         path.append(map)
-    return path
+    return path, value
 
 
 def main():
